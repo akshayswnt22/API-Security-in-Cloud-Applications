@@ -1,0 +1,111 @@
+2. Create a Virtual Environment
+
+python -m venv venv
+
+Activate the virtual environment:
+
+On Windows:
+venv\Scripts\activate
+
+pip install -r requirements.txt
+
+4. Set Up the Database
+Initialize the SQLite database:
+
+python
+>>> from app import db
+>>> db.create_all()
+>>> exit()
+
+
+5. Start Redis (Required for Rate Limiting)
+
+Ensure Redis is installed and running on your machine. Start Redis using:
+
+Run the Application
+Start the Flask development server:
+
+API Endpoints and Examples
+1. Public Routes
+/public (GET)
+Description: A public route accessible without authentication.
+Example:
+Response:
+/about (GET)
+Description: About page.
+Example:
+Response:
+2. UI Pages
+/ (GET)
+Description: Home page.
+Example: Open http://127.0.0.1:5000/ in a browser.
+/inquiry (GET/POST)
+Description: Inquiry form page.
+Example: Open http://127.0.0.1:5000/inquiry in a browser.
+/feedback (GET/POST)
+Description: Feedback form page.
+Example: Open http://127.0.0.1:5000/feedback in a browser.
+3. Authentication Routes
+/register (POST)
+Description: Register a new user.
+Example (Postman):
+URL: http://127.0.0.1:5000/register
+Method: POST
+Body (JSON):
+Response:
+
+/login (POST)
+Description: Login and generate a JWT token.
+Example (Postman):
+URL: http://127.0.0.1:5000/login
+Method: POST
+Body (JSON):
+Response:
+
+/logout (POST)
+Description: Logout and blacklist the current token.
+Example (Postman):
+URL: http://127.0.0.1:5000/logout
+Method: POST
+Headers:
+1 vulnerability
+Response:
+
+4. Protected Routes
+/protected (GET)
+Description: A protected route that requires a valid JWT token.
+Example (Postman):
+URL: http://127.0.0.1:5000/protected
+Method: GET
+Headers:
+Response:
+
+5. Product Management
+/products (GET)
+Description: Get all products (JWT-protected).
+Example (Postman):
+URL: http://127.0.0.1:5000/products
+Method: GET
+Headers:
+Response:
+
+/add-product (POST)
+Description: Add a new product (JWT-protected).
+Example (Postman):
+URL: http://127.0.0.1:5000/add-product
+Method: POST
+Headers:
+Body (JSON):
+Response:
+
+6. Rate Limiting
+Description: The application uses Flask-Limiter to restrict the number of requests to certain routes.
+Default Limits:
+200 requests per day
+50 requests per hour
+Notes
+Redis: Ensure Redis is running for rate limiting to work.
+Database: The application uses SQLite for simplicity. You can switch to another database by updating the SQLALCHEMY_DATABASE_URI in app.py.
+License
+This project is licensed under the MIT License.
+

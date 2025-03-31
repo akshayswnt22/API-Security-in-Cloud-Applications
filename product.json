@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop",
+        "category": "Electronics",
+        "price": 1200.99,
+        "stock": 50,
+        "brand": "BrandA",
+        "rating": 4.5,
+        "description": "High-performance laptop",
+        "warranty": "2 years",
+        "discount": 10
+    },
+    {
+        "id": 2,
+        "name": "Smartphone",
+        "category": "Electronics",
+        "price": 799.99,
+        "stock": 100,
+        "brand": "BrandB",
+        "rating": 4.7,
+        "description": "Latest smartphone with advanced features",
+        "warranty": "1 year",
+        "discount": 5
+    }
+]

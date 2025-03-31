@@ -1,0 +1,63 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}API Security{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+        body {
+            background-image: url("/static/background.jpeg");
+            background-size: cover; /* Ensures the image covers the entire page */
+            background-position: center; /* Centers the image */
+            background-attachment: fixed; /* Keeps the background fixed during scrolling */
+            color: white; /* Makes text white for better visibility */
+        }
+    
+        /* Add a semi-transparent overlay for better text readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+            z-index: -1; /* Places the overlay behind the content */
+        }
+    
+        .container {
+            position: relative; /* Ensures content is above the overlay */
+            z-index: 1;
+        }
+    
+        nav {
+            z-index: 2; /* Ensures the navbar is above the overlay */
+        }
+    </style><style>
+        body {
+            background-image: url("/static/backgroud.jpeg");
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('home') }}">API Security</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('feedback') }}">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('inquiry') }}">Inquiry</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

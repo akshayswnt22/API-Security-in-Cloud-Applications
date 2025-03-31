@@ -1,0 +1,17 @@
+api_security_project/
+│── app.py                # Main entry point
+│── config.py             # Configuration settings
+│── db.py                 # Database setup
+│── static/
+│   ├── css/
+│   ├── images/           # Background image storage
+│── templates/
+│   ├── base.html         # Common Bootstrap layout
+│   ├── home.html         # Home page
+│   ├── feedback.html     # Feedback form
+│   ├── inquiry.html      # Inquiry form
+│── routes/
+│   ├── home_routes.py    # Home route
+│   ├── form_routes.py    # Feedback & Inquiry handling
+│── requirements.txt      # Dependencies
+│── README.md             # Documentation

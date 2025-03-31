@@ -1,0 +1,51 @@
++-----------------------+        +-----------------------+
+|   Client Applications |        |   External Services   |
+|   (Web/Mobile/Postman)|        |   (OAuth, Payment API)|
++-----------------------+        +-----------------------+
+            |                              |
+            |                              |
+            +------------------------------+
+                           |
+                           v
++-------------------------------------------------------------+
+|                     API Gateway (Cloud)                    |
+| - Rate Limiting                                             |
+| - Authentication (JWT, OAuth)                              |
+| - Request Validation                                        |
+| - Logging and Monitoring                                    |
++-------------------------------------------------------------+
+                           |
+                           v
++-------------------------------------------------------------+
+|                     Application Layer                      |
+| - Flask API Backend                                         |
+| - Business Logic                                            |
+| - Input Validation                                          |
+| - Error Handling                                            |
++-------------------------------------------------------------+
+                           |
+                           v
++-------------------------------------------------------------+
+|                     Security Services                      |
+| - JWT Authentication                                        |
+| - OAuth Integration                                         |
+| - Rate Limiting (Redis/Cloud-native)                       |
+| - Blacklisting Tokens                                       |
++-------------------------------------------------------------+
+                           |
+                           v
++-------------------------------------------------------------+
+|                     Data Layer                             |
+| - SQL Database (e.g., PostgreSQL, MySQL, SQLite)           |
+| - NoSQL Database (e.g., MongoDB, DynamoDB)                 |
+| - Object Storage (e.g., AWS S3, Azure Blob Storage)         |
++-------------------------------------------------------------+
+                           |
+                           v
++-------------------------------------------------------------+
+|                     Cloud Infrastructure                   |
+| - Load Balancer                                             |
+| - Auto-scaling                                              |
+| - Virtual Machines/Containers (e.g., Docker, Kubernetes)    |
+| - Cloud Security (IAM, Firewalls, Encryption)              |
++-------------------------------------------------------------+
